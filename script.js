@@ -1,6 +1,6 @@
 // Libera o conteúdo do site no início do dia 11/12/2026 (horário de Brasília).
 (() => {
-  const alvo = new Date("2026-11-20T00:00:00-03:00").getTime();
+ const alvo = new Date("2026-12-11T00:00:00-03:00").getTime();
   const bloqueio = document.getElementById("birthday-lock");
   if (!bloqueio) return;
 
