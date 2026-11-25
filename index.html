@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10131d">
+  <title>Um dia especial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Um dia especial</h1>
+  <nav class="Inicio">
+    <a href="index.html" class="ativo">Início</a>
+    <a href="catalogo.html">Galeria</a>
+    <a href="top.html">Nosso mundo</a>
+    <a href="posts.html">Livro</a>
+    <a href="sobre.html">Metas</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero-slides" aria-label="Apresentação especial">
+    <article class="slide ativo">
+      <img src="img\IMG-20261101-WA0033.jpg" alt="">
+      <div class="slide-conteudo">
+        <span class="selo">Uma data para celebrar</span>
+        <h2>Hoje é sobre você</h2>
+        <p>Memorias que guardo com carinho</p>
+        <div class="slide-acoes">
+          <a class="botao" href="catalogo.html">Ver memórias</a>
+          <a class="botao botao-secundario" href="posts.html">Abrir nosso livro</a>
+        </div>
+      </div>
+    </article>
+    <article class="slide">
+      <img src="img\IMG-20260106-WA0023.jpg" alt="">
+      <div class="slide-conteudo">
+        <span class="selo">Grandes momentos</span>
+        <h2>Uma coleção de lembranças</h2>
+        <p>Momentos Especiais</p>
+        <div class="slide-acoes">
+          <a class="botao" href="catalogo.html">Explorar galeria</a>
+        </div>
+      </div>
+    </article>
+    <article class="slide">
+      <img src="img\tlou2.jpg" alt="">
+      <div class="slide-conteudo">
+        <span class="selo">Tudo que faz parte de você</span>
+        <h2>Seu mundo, do seu jeito</h2>
+        <p>Filmes, séries, jogos, músicas</p>
+        <div class="slide-acoes">
+          <a class="botao" href="top.html">Conhecer nosso mundo</a>
+        </div>
+      </div>
+    </article>
+    <div class="controles-slides">
+      <div class="pontos-slides" id="pontos-slides">
+        <button class="ponto-slide ativo" aria-label="Slide 1"></button>
+        <button class="ponto-slide" aria-label="Slide 2"></button>
+        <button class="ponto-slide" aria-label="Slide 3"></button>
+      </div>
+      <button type="button" id="slide-anterior" aria-label="Slide anterior">‹</button>
+      <button type="button" id="slide-proximo" aria-label="Próximo slide">›</button>
+    </div>
+  </section>
+
+  
+</main>
+<footer>Feito para guardar momentos especiais ✦</footer>
+
+<script>
+(() => {
+  const slides = [...document.querySelectorAll('.slide')];
+  const dots = [...document.querySelectorAll('.ponto-slide')];
+  let atual = 0;
+  let trocaAutomatica;
+  function mostrar(indice) {
+    atual = (indice + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle('ativo', i === atual));
+    dots.forEach((dot, i) => dot.classList.toggle('ativo', i === atual));
+  }
+  function reiniciar() {
+    clearInterval(trocaAutomatica);
+    trocaAutomatica = setInterval(() => mostrar(atual + 1), 6500);
+  }
+  document.getElementById('slide-anterior').addEventListener('click', () => { mostrar(atual - 1); reiniciar(); });
+  document.getElementById('slide-proximo').addEventListener('click', () => { mostrar(atual + 1); reiniciar(); });
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { mostrar(i); reiniciar(); }));
+  reiniciar();
+})();
+</script>
+
+<div id="birthday-lock" role="dialog" aria-modal="true" aria-labelledby="titulo-contagem">
+  <div class="countdown-card">
+    <div class="countdown-star">✦</div>
+    <span class="selo">Um momento especial está chegando</span>
+    <h2 id="titulo-contagem">Estamos contando os dias.</h2>
+    <p>Este cantinho será desbloqueado no aniversário. Até lá, a surpresa fica guardada por aqui.</p>
+    <div class="contagem" aria-live="polite">
+      <div class="tempo"><strong id="dias">00</strong><span>Dias</span></div>
+      <div class="tempo"><strong id="horas">00</strong><span>Horas</span></div>
+      <div class="tempo"><strong id="minutos">00</strong><span>Minutos</span></div>
+      <div class="tempo"><strong id="segundos">00</strong><span>Segundos</span></div>
+    </div>
+    <div class="data-aniversario">11 · 12 · 2026</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

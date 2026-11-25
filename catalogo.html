@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Fotos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pagina-galeria">
+
+<header>
+    <h1>Memorias</h1>
+
+    <nav class="Inicio">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html" class="ativo">Galeria</a>
+        <a href="top.html">Mundo</a>
+        <a href="posts.html">Livro</a>
+        <a href="sobre.html">Meta</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="galeria">
+        <h2>Galeria de memórias</h2>
+        <p class="subtitulo-secao">Momentos especiais.</p>
+
+        <div class="grid-galeria">
+
+            <!-- FOTO 1 -->
+            <div class="foto-container">
+                <img src="img\IMG-20251231-WA0038.jpg"
+                     class="foto-galeria"
+                     alt="Memória 1">
+            </div>
+
+            <!-- FOTO 2 -->
+            <div class="foto-container">
+                <img src="img\IMG-20260102-WA0136.jpg"
+                     class="foto-galeria"
+                     alt="Memória 2">
+            </div>
+
+            <!-- FOTO 3 -->
+            <div class="foto-container">
+                <img src="img\IMG-20260102-WA0140.jpg"
+                     class="foto-galeria"
+                     alt="Memória 3">
+            </div>
+             <!-- FOTO 4 -->
+            <div class="foto-container">
+                <img src="img\IMG-20251211-WA0059.jpg"
+                     class="foto-galeria"
+                     alt="Memória 3">
+            </div>
+             <!-- FOTO 5 -->
+            <div class="foto-container">
+                <img src="img\IMG-20260106-WA0021.jpg"
+                     class="foto-galeria"
+                     alt="Memória 3">
+            </div>
+             <!-- FOTO 6 -->
+            <div class="foto-container">
+                <img src="img\IMG-20260106-WA0022.jpg"
+                     class="foto-galeria"
+                     alt="Memória 3">
+            </div>
+             <!-- FOTO 7 -->
+            <div class="foto-container">
+                <img src="img\IMG-20260106-WA0023.jpg"
+                     class="foto-galeria"
+                     alt="Memória 3">
+            </div>
+             <!-- FOTO 8 -->
+            <div class="foto-container">
+                <img src="img\IMG-20260711-WA0004.jpg"
+                     class="foto-galeria"
+                     alt="Memória 3">
+            </div>
+             <!-- FOTO 9 -->
+            <div class="foto-container">
+                <img src="img\IMG-20260830-WA0026.jpg"
+                     class="foto-galeria"
+                     alt="Memória 3">
+            </div>
+             <!-- FOTO 10 -->
+            <div class="foto-container">
+                <img src="img\IMG-20260915-WA0024.jpg"
+                     class="foto-galeria"
+                     alt="Memória 3">
+            </div>
+             <!-- FOTO 11 -->
+            <div class="foto-container">
+                <img src="img\IMG-20260927-WA0005.jpg"
+                     class="foto-galeria"
+                     alt="Memória 3">
+            
+            </div>
+             <!-- FOTO 12 -->
+            <div class="foto-container">
+                <img src="img\IMG-20261030-WA0023.jpg"
+                     class="foto-galeria"
+                     alt="Memória 3">
+            </div> <!-- FOTO 13 -->
+            <div class="foto-container">
+                <video controls>
+                <source src="img\VID-20260201-WA0058.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+                </video>
+            </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    
+</footer>
+
+<!-- VISUALIZADOR DE FOTOS -->
+<div id="visualizador" class="visualizador">
+
+    <span id="fechar-foto">&times;</span>
+
+    <img id="foto-ampliada" src="" alt="Foto ampliada">
+
+</div>
+
+<script>
+
+const galeria = document.querySelector(".grid-galeria");
+
+const visualizador = document.getElementById("visualizador");
+
+const fotoAmpliada = document.getElementById("foto-ampliada");
+
+const fecharFoto = document.getElementById("fechar-foto");
+
+// AMPLIAR FOTO
+galeria.addEventListener("click", function(event) {
+
+    if (event.target.classList.contains("foto-galeria")) {
+
+        fotoAmpliada.src = event.target.src;
+
+        visualizador.style.display = "flex";
+
+    }
+
+});
+
+// FECHAR NO X
+fecharFoto.addEventListener("click", function() {
+
+    visualizador.style.display = "none";
+
+});
+
+// FECHAR CLICANDO FORA DA FOTO
+visualizador.addEventListener("click", function(event) {
+
+    if (event.target === visualizador) {
+
+        visualizador.style.display = "none";
+
+    }
+
+});
+
+// FECHAR COM ESC
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        visualizador.style.display = "none";
+
+    }
+
+});
+
+</script>
+
+
+<div id="birthday-lock" role="dialog" aria-modal="true" aria-labelledby="titulo-contagem">
+  <div class="countdown-card">
+    <div class="countdown-star">✦</div>
+    <span class="selo">Um momento especial está chegando</span>
+    <h2 id="titulo-contagem">Estamos contando os dias.</h2>
+    <p>Este cantinho será desbloqueado no aniversário. Até lá, a surpresa fica guardada por aqui.</p>
+    <div class="contagem" aria-live="polite">
+      <div class="tempo"><strong id="dias">00</strong><span>Dias</span></div>
+      <div class="tempo"><strong id="horas">00</strong><span>Horas</span></div>
+      <div class="tempo"><strong id="minutos">00</strong><span>Minutos</span></div>
+      <div class="tempo"><strong id="segundos">00</strong><span>Segundos</span></div>
+    </div>
+    <div class="data-aniversario">11 · 12 · 2026</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

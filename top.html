@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Mundo - CineBlog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pagina-top">
+
+<header>
+    <h1>Nosso Mundo</h1>
+
+    <nav class="Inicio">
+        <a href="index.html">Início</a>
+        <a href="catalogo.html">Galeria</a>
+        <a href="top.html" class="ativo">Mundo</a>
+        <a href="posts.html">Livro</a>
+        <a href="sobre.html">Meta</a>
+    </nav>
+</header>
+
+<main>
+<section class="ranking">
+
+    <h2>Meu Mundo</h2>
+    <div class="linha"></div>
+
+    <!-- ABAS -->
+    <div class="abas-mundo">
+        <button class="aba ativa" onclick="abrirAba('filmes', this)">Filmes</button>
+        <button class="aba" onclick="abrirAba('series', this)">Séries</button>
+        <button class="aba" onclick="abrirAba('animes', this)">Animes</button>
+        <button class="aba" onclick="abrirAba('jogos', this)">Jogos</button>
+        <button class="aba" onclick="abrirAba('cantores', this)">Cantores</button>
+    </div>
+
+    <!-- FILMES -->
+    <div id="filmes" class="conteudo-aba ativo">
+        <h2>Meus filmes</h2>
+
+        <div class="ranking-container">
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/obsessao.jpg" alt="Obsessão">
+                    <h3>Obsessão</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/whiplash.jpg" alt="Whiplash">
+                    <h3>Whiplash</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/waves.jpg" alt="Waves">
+                    <h3>Waves</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/La_La_Land_(filme).png" alt="La La Land">
+                    <h3>La La Land</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/o farol.jpg" alt="O Farol">
+                    <h3>O Farol</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/coraline.jpg" alt="Coraline">
+                    <h3>Coraline</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SÉRIES -->
+    <div id="series" class="conteudo-aba">
+        <h2>Minhas séries</h2>
+
+        <div class="ranking-container">
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/breaking.jpg" alt="Breaking Bad">
+                    <h3>Breaking Bad</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ANIMES -->
+    <div id="animes" class="conteudo-aba">
+        <h2>Meus animes</h2>
+
+        <div class="ranking-container">
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/hxh.jpg" alt="Hunter x Hunter">
+                    <h3>Hunter x Hunter</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/ippo.jpg" alt="Hajime no Ippo">
+                    <h3>Hajime no Ippo</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/villand.jpg" alt="Vinland Saga">
+                    <h3>Vinland Saga</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JOGOS -->
+    <div id="jogos" class="conteudo-aba">
+        <h2>Meus jogos</h2>
+
+        <div class="ranking-container">
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/tlou2.jpg" alt="The Last of Us 2">
+                    <h3>The Last of Us 2</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/alan.avif" alt="Alan Wake 2">
+                    <h3>Alan Wake 2</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/sillent.jpg" alt="Silent Hill">
+                    <h3>Silent Hill</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/red.jpg" alt="Red Dead Redemption 2">
+                    <h3>Red Dead Redemption 2</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CANTORES -->
+    <div id="cantores" class="conteudo-aba">
+        <h2>Meus cantores</h2>
+
+        <div class="ranking-container">
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/alee e brandao.jpg" alt="Alee e Brandão">
+                    <h3>Alee & Brandão</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/daniel.jpg" alt="Daniel Caesar">
+                    <h3>Daniel Caesar</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/drake.jpg" alt="Drake">
+                    <h3>Drake</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/frank.avif" alt="Frank Ocean">
+                    <h3>Frank Ocean</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/kanye.jpg" alt="Kanye West">
+                    <h3>Kanye West</h3>
+                </div>
+            </div>
+
+            <div class="card-top">
+                <div class="card-filme">
+                    <img src="img/travis.jpg" alt="Travis Scott">
+                    <h3>Travis Scott</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+</main>
+
+<footer></footer>
+
+<script>
+function abrirAba(id, botao) {
+
+    document.querySelectorAll('.conteudo-aba')
+        .forEach(aba => aba.classList.remove('ativo'));
+
+    document.querySelectorAll('.aba')
+        .forEach(aba => aba.classList.remove('ativa'));
+
+    document.getElementById(id).classList.add('ativo');
+
+    botao.classList.add('ativa');
+}
+</script>
+
+<!-- CONTAGEM REGRESSIVA -->
+<div id="birthday-lock" role="dialog" aria-modal="true" aria-labelledby="titulo-contagem">
+    <div class="countdown-card">
+        <div class="countdown-star">✦</div>
+        <span class="selo">Um momento especial está chegando</span>
+
+        <h2 id="titulo-contagem">Estamos contando os dias.</h2>
+
+        <p>Este cantinho será desbloqueado no aniversário. Até lá, a surpresa fica guardada por aqui.</p>
+
+        <div class="contagem" aria-live="polite">
+            <div class="tempo"><strong id="dias">00</strong><span>Dias</span></div>
+            <div class="tempo"><strong id="horas">00</strong><span>Horas</span></div>
+            <div class="tempo"><strong id="minutos">00</strong><span>Minutos</span></div>
+            <div class="tempo"><strong id="segundos">00</strong><span>Segundos</span></div>
+        </div>
+
+        <div class="data-aniversario">11 · 12 · 2026</div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
